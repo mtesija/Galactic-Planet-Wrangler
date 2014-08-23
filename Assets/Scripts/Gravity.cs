@@ -20,7 +20,7 @@ public class Gravity : MonoBehaviour
 			Vector2 direction = obj.transform.position - this.transform.position;
 			direction.Normalize();
 
-			direction *= G * obj.rigidbody2D.mass / (distance * distance);
+			direction *= G * this.rigidbody2D.mass * obj.rigidbody2D.mass / (distance * distance);
 
 			this.rigidbody2D.AddForce(direction);
 		}
