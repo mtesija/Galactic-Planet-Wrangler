@@ -40,14 +40,25 @@ public class Scorekeeper : MonoBehaviour
 			
 			Destroy(coll.gameObject, .1f);
 		}
-		else if(coll.transform.name == "Planet")
+		else if(coll.transform.name == "Planet0"
+		        || coll.transform.name == "Planet1"
+		        || coll.transform.name == "Planet2"
+		        || coll.transform.name == "Planet3"
+		        || coll.transform.name == "Planet4"
+		        || coll.transform.name == "Planet5"
+		        || coll.transform.name == "Planet6"
+		        || coll.transform.name == "Planet7"
+		        || coll.transform.name == "Planet8"
+		        || coll.transform.name == "Planet9")
 		{
 			NumberPlanets++;
 			TotalMass += coll.rigidbody2D.mass;
 
 			Destroy(coll.gameObject, .1f);
 		}
-		else if(coll.transform.name == "Asteroid")
+		else if(coll.transform.name == "Asteroid0"
+		        || coll.transform.name == "Asteroid1"
+		        || coll.transform.name == "Asteroid2")
 		{
 			NumberAsteroids++;
 			TotalMass += coll.rigidbody2D.mass;

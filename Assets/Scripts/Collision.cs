@@ -16,7 +16,7 @@ public class Collision : MonoBehaviour
 		{
 			hitPlayer = true;
 			this.GetComponent<Gravity>().enabled = false;
-			this.transform.parent = coll.transform;
+			//this.transform.parent = coll.transform;
 			DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>() as DistanceJoint2D;
 			joint.distance = Vector2.Distance(this.transform.position, coll.transform.position);
 			joint.collideConnected = false;
@@ -30,7 +30,7 @@ public class Collision : MonoBehaviour
 			{
 				hitPlayer = true;
 				this.GetComponent<Gravity>().enabled = false;
-				this.transform.parent = coll.transform;
+				//this.transform.parent = coll.transform;
 				DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>() as DistanceJoint2D;
 				joint.distance = Vector2.Distance(this.transform.position, coll.transform.position);
 				joint.collideConnected = false;
