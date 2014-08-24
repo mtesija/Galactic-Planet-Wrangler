@@ -14,7 +14,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Planet5
   m_TagString: Gravity
   m_Icon: {fileID: 0}

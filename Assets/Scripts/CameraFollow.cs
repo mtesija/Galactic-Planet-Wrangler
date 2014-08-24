@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour {
 	public float extraCameraSpace;
 	public float followSpeed;
 	public float zoomSpeed;
+	public Camera c;
 
 	int numLivingPlayers;
 	Vector2 furthestPlayer;
@@ -24,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
 		furthestPlayer = Vector2.zero;
 		cameraPosition = Vector3.zero;
 		numLivingPlayers = 0;
-		mainCamera = Camera.main;
+		mainCamera = c;
 		aspectRatio = mainCamera.aspect;
 		cameraTo = mainCamera.transform.position;
 		zoomTo = mainCamera.orthographicSize;
