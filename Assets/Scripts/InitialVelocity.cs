@@ -13,8 +13,10 @@ public class InitialVelocity : MonoBehaviour
 		direction.Normalize();
 		direction = Quaternion.Euler(0, 0, 90) * direction;
 
-		direction *= Mathf.Sqrt(G * sun.rigidbody2D.mass / Vector2.Distance(this.transform.position, sun.position));
+		direction *= 1.09f * Mathf.Sqrt(G * sun.rigidbody2D.mass / Vector2.Distance(this.transform.position, sun.position));
 
 		this.rigidbody2D.velocity = direction;
+
+		Destroy(this);
 	}
 }
