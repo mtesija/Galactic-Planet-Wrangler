@@ -32,9 +32,6 @@ public class Scorekeeper : MonoBehaviour
 			if(EndTimer > 0)
 			{
 				EndTimer -= Time.deltaTime;
-
-				Vector3 t = transform.localScale / 1.004f;
-				transform.localScale = t;
 			}
 			else
 			{
