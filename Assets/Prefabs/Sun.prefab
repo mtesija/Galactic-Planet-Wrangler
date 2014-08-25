@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
+  - 82: {fileID: 8200000}
   m_Layer: 9
   m_Name: Sun
   m_TagString: Gravity
@@ -115,7 +116,6 @@ Transform:
   - {fileID: 400010}
   - {fileID: 400008}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -127,7 +127,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 2
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -139,7 +138,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 1
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -151,7 +149,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 0
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 1
@@ -163,7 +160,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 4
 --- !u!4 &400010
 Transform:
   m_ObjectHideFlags: 1
@@ -175,7 +171,6 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 3
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -202,9 +197,67 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 4
   m_Center: {x: 0, y: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
-  serializedVersion: 3
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -213,8 +266,8 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e0650a5aac5f1cc4383304143b6e2be8, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
   m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -227,6 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f5ff322050f314987cc38dad7e6007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit1: {fileID: 8300000, guid: 423a2d748fa8c994e99495cd12d0f6f5, type: 3}
+  hit2: {fileID: 8300000, guid: 06f1a8527ca02ad41b1f90927a8a434f, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -245,8 +300,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 2112828197
+  m_SortingLayer: 2
   m_SortingOrder: 2
+  m_SortingLayerID: 2112828197
   m_Sprite: {fileID: 21300002, guid: 9580bf31d824662418851de31f77e457, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200002
@@ -267,8 +323,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 2112828197
+  m_SortingLayer: 2
   m_SortingOrder: 1
+  m_SortingLayerID: 2112828197
   m_Sprite: {fileID: 21300000, guid: 9580bf31d824662418851de31f77e457, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200004
@@ -289,8 +346,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 2112828197
+  m_SortingLayer: 2
   m_SortingOrder: 0
+  m_SortingLayerID: 2112828197
   m_Sprite: {fileID: 21300004, guid: 9580bf31d824662418851de31f77e457, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200006
@@ -311,8 +369,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 950949207
+  m_SortingLayer: 5
   m_SortingOrder: 0
+  m_SortingLayerID: 950949207
   m_Sprite: {fileID: 21300004, guid: bae663098bc431343955c748a6d3f40c, type: 3}
   m_Color: {r: .808823526, g: .664449334, b: .285467118, a: 1}
 --- !u!212 &21200008
@@ -333,8 +392,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 950949207
+  m_SortingLayer: 5
   m_SortingOrder: 0
+  m_SortingLayerID: 950949207
   m_Sprite: {fileID: 21300004, guid: 0164aed4060630f48a4b12952f6aa41c, type: 3}
   m_Color: {r: .80392158, g: .65882355, b: .286274523, a: 1}
 --- !u!1001 &100100000
