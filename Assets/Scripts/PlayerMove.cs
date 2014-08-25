@@ -14,7 +14,6 @@ public class PlayerMove : MonoBehaviour
 	{
 			float distance = Vector2.Distance(sun.position, this.transform.position);
 			Vector2 direction = sun.position - this.transform.position;
-			print(direction);
 			direction.Normalize();
 			
 			direction *= 10 * this.rigidbody2D.mass * sun.rigidbody2D.mass / (distance * distance);

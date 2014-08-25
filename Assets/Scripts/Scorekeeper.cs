@@ -58,6 +58,17 @@ public class Scorekeeper : MonoBehaviour
 			Endgame = true;
 			Sound();
 			Destroy(coll.gameObject, .1f);
+
+			GameObject[] Objects = GameObject.FindGameObjectsWithTag("Gravity") as GameObject[];
+			foreach(GameObject obj in Objects)
+			{
+				if(!obj.GetComponent<Gravity>())
+				{
+					continue;
+				}
+
+				obj.GetComponent<Gravity>().enabled = true;
+			}
 		}
 		else if(coll.transform.name == "Planet0"
 		        || coll.transform.name == "Planet1"
