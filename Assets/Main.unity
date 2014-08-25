@@ -16214,7 +16214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   c: {fileID: 1430207840}
   zoomSpeed: .25
-  zoomTo: 6
+  zoomTo: 8
   zoomTime: 11
 --- !u!1 &1459081705
 GameObject:
@@ -16768,8 +16768,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1481347103}
   - 20: {fileID: 1481347102}
-  - 124: {fileID: 1481347101}
-  - 92: {fileID: 1481347100}
   - 114: {fileID: 1481347099}
   m_Layer: 0
   m_Name: Camera
@@ -16797,20 +16795,6 @@ MonoBehaviour:
   followSpeed: 2
   zoomSpeed: 2
   c: {fileID: 1481347102}
---- !u!92 &1481347100
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1481347098}
-  m_Enabled: 1
---- !u!124 &1481347101
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1481347098}
-  m_Enabled: 1
 --- !u!20 &1481347102
 Camera:
   m_ObjectHideFlags: 0
