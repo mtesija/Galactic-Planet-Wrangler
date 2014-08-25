@@ -16,6 +16,7 @@ public class Scorekeeper : MonoBehaviour
 
 	public AudioClip hit1;
 	public AudioClip hit2;
+	public GameObject blackHole;
 
 	float cooldown = 0;
 
@@ -31,10 +32,14 @@ public class Scorekeeper : MonoBehaviour
 			if(EndTimer > 0)
 			{
 				EndTimer -= Time.deltaTime;
+
+				Vector3 t = transform.localScale / 1.004f;
+				transform.localScale = t;
 			}
 			else
 			{
 				//Hack, drop the blackhole
+				Instantiate(blackHole, transform.position, Quaternion.identity);
 				displayGUI = true;
 			}
 		}
@@ -90,8 +95,11 @@ public class Scorekeeper : MonoBehaviour
 		        || coll.transform.name == "Planet8"
 		        || coll.transform.name == "Planet9")
 		{
-			NumberPlanets++;
-			TotalPlanetMass += Random.Range(10000f, 1000000f);
+			if(!displayGUI)
+			{
+				NumberPlanets++;
+				TotalPlanetMass += Random.Range(10000f, 1000000f);
+			}
 			Sound();
 			Destroy(coll.gameObject, .1f);
 		}
@@ -99,8 +107,11 @@ public class Scorekeeper : MonoBehaviour
 		        || coll.transform.name == "Asteroid1"
 		        || coll.transform.name == "Asteroid2")
 		{
-			NumberAsteroids++;
-			TotalAsteroidMass += Random.Range(1000f, 10000f);
+			if(!displayGUI)
+			{
+				NumberAsteroids++;
+				TotalAsteroidMass += Random.Range(1000f, 10000f);
+			}
 			Sound();
 			Destroy(coll.gameObject, .1f);
 		}
