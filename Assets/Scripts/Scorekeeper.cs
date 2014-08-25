@@ -26,7 +26,7 @@ public class Scorekeeper : MonoBehaviour
 			cooldown -= Time.deltaTime;
 		}
 
-		if(Endgame)
+		if(Endgame && !displayGUI)
 		{
 			if(EndTimer > 0)
 			{
@@ -34,6 +34,7 @@ public class Scorekeeper : MonoBehaviour
 			}
 			else
 			{
+				//Hack, drop the blackhole
 				displayGUI = true;
 			}
 		}
