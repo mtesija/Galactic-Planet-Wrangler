@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
-	bool started = false;
 	Transform sun;
 
 	void Awake()
@@ -13,8 +12,6 @@ public class PlayerMove : MonoBehaviour
 
 	void Update()
 	{
-		if(started == true)
-		{
 			float distance = Vector2.Distance(sun.position, this.transform.position);
 			Vector2 direction = sun.position - this.transform.position;
 			print(direction);
@@ -26,25 +23,15 @@ public class PlayerMove : MonoBehaviour
 
 			if(Input.GetMouseButton(0))
 			{
-				Vector2 velocity = this.rigidbody2D.velocity;
-				velocity *= .8f;
-				this.rigidbody2D.velocity = velocity;
-			}
-		}
-		else
-		{
-			if(Input.GetMouseButtonDown(0))
-			{
-				started = true;
 				this.rigidbody2D.mass = 1;
-
-				Vector2 direction = GameObject.Find("Main Camera").camera.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+				
+				direction = GameObject.Find("Main Camera").camera.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
 				direction.Normalize();
-
+				
 				direction *= 8;
-
+				
 				this.rigidbody2D.velocity = direction;
 			}
-		}
+
 	}
 }
